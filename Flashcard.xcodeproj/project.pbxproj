@@ -15,6 +15,9 @@
 		16D43F20202B30210040E310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D43F1E202B30210040E310 /* LaunchScreen.storyboard */; };
 		16D43F2B202B30210040E310 /* FlashcardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D43F2A202B30210040E310 /* FlashcardTests.swift */; };
 		16D43F36202B30210040E310 /* FlashcardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D43F35202B30210040E310 /* FlashcardUITests.swift */; };
+		16D43F44202B3C720040E310 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D43F43202B3C720040E310 /* FlashcardViewController.swift */; };
+		16D43F47202B3FAF0040E310 /* Flashcard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D43F45202B3FAF0040E310 /* Flashcard+CoreDataClass.swift */; };
+		16D43F48202B3FAF0040E310 /* Flashcard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D43F46202B3FAF0040E310 /* Flashcard+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		16D43F31202B30210040E310 /* FlashcardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D43F35202B30210040E310 /* FlashcardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardUITests.swift; sourceTree = "<group>"; };
 		16D43F37202B30210040E310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D43F43202B3C720040E310 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		16D43F45202B3FAF0040E310 /* Flashcard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flashcard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		16D43F46202B3FAF0040E310 /* Flashcard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flashcard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,11 @@
 		16D43F11202B30210040E310 /* Flashcard */ = {
 			isa = PBXGroup;
 			children = (
+				16D43F45202B3FAF0040E310 /* Flashcard+CoreDataClass.swift */,
+				16D43F46202B3FAF0040E310 /* Flashcard+CoreDataProperties.swift */,
 				16D43F12202B30210040E310 /* AppDelegate.swift */,
 				16D43F14202B30210040E310 /* ViewController.swift */,
+				16D43F43202B3C720040E310 /* FlashcardViewController.swift */,
 				16D43F16202B30210040E310 /* Main.storyboard */,
 				16D43F1C202B30210040E310 /* Assets.xcassets */,
 				16D43F1E202B30210040E310 /* LaunchScreen.storyboard */,
@@ -262,9 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D43F48202B3FAF0040E310 /* Flashcard+CoreDataProperties.swift in Sources */,
+				16D43F47202B3FAF0040E310 /* Flashcard+CoreDataClass.swift in Sources */,
 				16D43F15202B30210040E310 /* ViewController.swift in Sources */,
 				16D43F1B202B30210040E310 /* Flashcard.xcdatamodeld in Sources */,
 				16D43F13202B30210040E310 /* AppDelegate.swift in Sources */,
+				16D43F44202B3C720040E310 /* FlashcardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

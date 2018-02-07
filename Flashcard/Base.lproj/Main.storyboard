@@ -38,6 +38,9 @@
                                 <state key="normal" title="Delete Card">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteCardAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w24-yr-Ika"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CRJ-NA-XkT">
                                 <rect key="frame" x="16" y="99" width="343" height="29"/>
@@ -47,6 +50,9 @@
                                     <segment title="Question First"/>
                                     <segment title="Answer First"/>
                                 </segments>
+                                <connections>
+                                    <action selector="chooseDisplayModeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="KqY-yb-ct0"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Subject Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjL-wQ-k7v">
                                 <rect key="frame" x="16" y="170" width="343" height="48"/>
@@ -56,30 +62,52 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pv-bk-90V">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pv-bk-90V">
                                 <rect key="frame" x="16" y="243" width="343" height="291"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d3S-D6-5aH" appends="YES" id="tNx-xt-syt"/>
+                                    <outletCollection property="gestureRecognizers" destination="Glw-AA-opQ" appends="YES" id="1TQ-Yw-Pbi"/>
+                                    <outletCollection property="gestureRecognizers" destination="5Ht-Rw-TIg" appends="YES" id="LUa-1B-RIU"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cardContentLabel" destination="1Pv-bk-90V" id="oLB-9A-Nsh"/>
+                        <outlet property="subjectTextField" destination="wjL-wQ-k7v" id="DoA-pT-Fva"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="uR4-6X-vP7"/>
-                <swipeGestureRecognizer direction="up" id="NPt-S8-jEI"/>
-                <swipeGestureRecognizer direction="down" id="3kS-fR-Ubc"/>
+                <swipeGestureRecognizer direction="right" id="d3S-D6-5aH">
+                    <connections>
+                        <action selector="swipeRightAction:" destination="BYZ-38-t0r" id="rR9-Sd-qlp"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="Glw-AA-opQ">
+                    <connections>
+                        <action selector="swipeUpAction:" destination="BYZ-38-t0r" id="Tre-tj-LEQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="5Ht-Rw-TIg">
+                    <connections>
+                        <action selector="swipeDownAction:" destination="BYZ-38-t0r" id="tfn-yE-uf4"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-28" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Flashcard View Controller-->
         <scene sceneID="n9G-nT-JXo">
             <objects>
-                <viewController id="6hD-1P-UWI" sceneMemberID="viewController">
+                <viewController id="6hD-1P-UWI" customClass="FlashcardViewController" customModule="Flashcard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DFq-4K-kMa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +133,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveCardAction:" destination="6hD-1P-UWI" eventType="touchUpInside" id="qkr-Cd-G1H"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="sm0-fF-MVp"/>
                                 </connections>
                             </button>
@@ -134,6 +163,11 @@
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="2Eb-A4-Yfn"/>
                     </view>
+                    <connections>
+                        <outlet property="answerTextView" destination="x10-Tx-xZ8" id="Z7e-of-7Tv"/>
+                        <outlet property="questionTextView" destination="DsN-c2-v3s" id="uxU-db-Dpl"/>
+                        <outlet property="subjectTextField" destination="X19-JL-Lbh" id="4rZ-XL-r28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ev6-Sy-MAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
